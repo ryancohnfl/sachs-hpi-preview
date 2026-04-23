@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#FAF7F5" />
+<title>SachsHEALTH Influence Index | 2026 Report</title>
+<meta name="description" content="The inaugural SachsHEALTH Influence Index measures the disconnect between who Americans consider influential in health care and who they want to have greater influence." />
+
+<link rel="canonical" href="https://sachsmedia.com/sachs-health/influence-index" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="SachsHEALTH" />
+<meta property="og:title" content="The SachsHEALTH Influence Index | 2026 Report" />
+<meta property="og:description" content="America's power map for health care. The inaugural Influence Index measures the disconnect between who Americans consider influential and who they want to speak louder." />
+<meta property="og:url" content="https://sachsmedia.com/sachs-health/influence-index" />
+<!-- TODO [DEV]: Replace og:image with final 1200x630 asset (export from report cover or hero). -->
+<meta property="og:image" content="https://sachsmedia.com/wp-content/uploads/2026/influence-index-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="The SachsHEALTH Influence Index — 2026 Report cover" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@SachsMedia" />
+<meta name="twitter:title" content="The SachsHEALTH Influence Index | 2026 Report" />
+<meta name="twitter:description" content="America's power map for health care. The inaugural Influence Index measures the disconnect between who Americans consider influential and who they want to speak louder." />
+<meta name="twitter:image" content="https://sachsmedia.com/wp-content/uploads/2026/influence-index-og.jpg" />
+
+<!--
+  FONT LOADING NOTES
+  ------------------
+  Queering and Libre Caslon Condensed are self-hosted by the parent
+  prpl-sachs WordPress theme. In production, those @font-face
+  declarations already exist at the theme level. The declarations
+  below make the static mockup preview render correctly outside
+  WordPress; in production they are harmless duplicates.
+
+  Geist and Geist Mono — the theme only ships Regular (400). The
+  mockup's editorial typography uses 300/500/600/700. Until the
+  theme adds those subsets, we load the extra weights from Google
+  Fonts. TODO [DEV]: remove the Google Fonts <link> once the theme
+  adds the missing Geist weight variants.
+-->
+<link rel="preconnect" href="https://sachsmedia.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   TOKENS — Locked to the sachsmedia.com parent-site palette
+   (Elementor kit #7650) for visual consistency across the
+   SachsHEALTH division and the wider brand. Hex values verified
+   against the rural-health-transformation-program page source.
+   Crisis red, canopy green, plum, peach, pear deliberately
+   dropped per brand decision for this campaign.
+   ============================================================ */
+:root {
+  --print:     #FAF7F5;  /* paper / warm off-white — matches site --e-global-color-9bffdec */
+  --ink:       #101820;  /* near-black body text — matches site --e-global-color-6381228 */
+  --royal:     #2E2EE0;  /* ultramarine — matches site --e-global-color-secondary */
+  --electric:  #2E2EE0;  /* ultramarine — single brand blue (was split in report) */
+  --powder:    #96C7E8;  /* powder blue — matches site --e-global-color-beb90d3 */
+  --powder-lo: #CEE4F3;  /* lighter powder wash — computed 20% lighter than --powder */
+  --lightning: #F7BF26;  /* mustard — matches site --e-global-color-9c3ef2d */
+
+  --brand:    'Queering', Impact, 'Arial Black', 'Helvetica Neue Condensed Bold', sans-serif;
+  --serif:    'Libre Caslon Condensed', Georgia, 'Times New Roman', serif;
+  --sans:     'Geist', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:     'Geist Mono', 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  --max:      1180px;
+  --radius:   999px;
+  --ease:     cubic-bezier(.2,.7,.3,1);
+}
+
+/* ============================================================
+   @font-face — Queering + Libre Caslon Condensed.
+   Files self-hosted by the prpl-sachs theme and served
+   cross-origin. In the WP theme these declarations already
+   exist; leaving them here makes static preview work and is
+   harmless when deployed inside the theme.
+   ============================================================ */
+@font-face {
+  font-family: 'Queering';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://sachsmedia.com/wp-content/themes/prpl-sachs/static/fonts/hinted-subset-Queering-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Queering';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://sachsmedia.com/wp-content/themes/prpl-sachs/static/fonts/hinted-subset-Queering-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Queering';
+  font-weight: 900;
+  font-style: normal;
+  src: url('https://sachsmedia.com/wp-content/themes/prpl-sachs/static/fonts/hinted-subset-Queering-Heavy.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Libre Caslon Condensed';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://sachsmedia.com/wp-content/themes/prpl-sachs/static/fonts/hinted-subset-LibreCaslonCondensed-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Libre Caslon Condensed';
+  font-weight: 400;
+  font-style: italic;
+  src: url('https://sachsmedia.com/wp-content/themes/prpl-sachs/static/fonts/hinted-subset-LibreCaslonCondensed-Italic.woff2') format('woff2');
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--print);
+  overflow-x: hidden;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+/* ============================================================
+   SHARED — plus glyph (house dingbat), mono eyebrow, scribble
+   underline, lasso circle. These are the report's signature
+   editorial devices, rebuilt as reusable web primitives.
+   ============================================================ */
+
+/* The + glyph — thin circle with a medical plus, usable at any size */
+.plus {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1em; height: 1em;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  position: relative;
+  vertical-align: baseline;
+  flex-shrink: 0;
+}
+.plus::before, .plus::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+.plus::before { width: 48%; height: 1.5px; }
+.plus::after  { width: 1.5px; height: 48%; }
+
+/* Mono eyebrow with deliberate extra letterspacing — echoes the
+   report's "INFLUEN CE INDEX | VOLU M E 1" footer treatment. */
+.mono-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Scribble underline — SVG marker-style stroke */
+.scribble {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 2px;
+}
+.scribble::after {
+  content: "";
+  position: absolute;
+  left: -4%; right: -4%;
+  bottom: -10px;
+  height: 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'><path d='M2,9 C 40,3 80,11 120,6 C 160,1 200,12 240,7 C 265,4 285,10 298,6' fill='none' stroke='%232E2EE6' stroke-width='2.5' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+.scribble--powder::after {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'><path d='M2,9 C 40,3 80,11 120,6 C 160,1 200,12 240,7 C 265,4 285,10 298,6' fill='none' stroke='%23B8DCF0' stroke-width='2.5' stroke-linecap='round'/></svg>");
+}
+.scribble--lightning::after {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'><path d='M2,9 C 40,3 80,11 120,6 C 160,1 200,12 240,7 C 265,4 285,10 298,6' fill='none' stroke='%23F7BF26' stroke-width='2.5' stroke-linecap='round'/></svg>");
+}
+
+/* Lasso circle — hand-drawn ellipse around a phrase. Used once
+   in hero and once in closer per report pacing. */
+.lasso {
+  display: inline-block;
+  position: relative;
+  padding: 0 .35em;
+}
+.lasso::before {
+  content: "";
+  position: absolute;
+  inset: -15% -12% -18% -12%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 140' preserveAspectRatio='none'><path d='M 20,70 C 20,25 120,8 220,14 C 320,20 385,40 385,72 C 385,108 280,128 180,124 C 80,120 22,98 22,72 C 22,64 25,56 32,50' fill='none' stroke='%232E2EE6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+.lasso--powder::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 140' preserveAspectRatio='none'><path d='M 20,70 C 20,25 120,8 220,14 C 320,20 385,40 385,72 C 385,108 280,128 180,124 C 80,120 22,98 22,72 C 22,64 25,56 32,50' fill='none' stroke='%23B8DCF0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+/* ============================================================
+   CHROME HEADER + FOOTER
+   ============================================================ */
+.chrome-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--print);
+  border-bottom: 1px solid rgba(16,24,32,.08);
+  backdrop-filter: saturate(1.2);
+}
+.chrome-header__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.brand-lockup {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--brand); font-weight: 900; letter-spacing: -0.015em;
+  text-transform: uppercase; font-size: 24px;
+  color: var(--ink);
+}
+.brand-lockup .plus {
+  width: 28px; height: 28px;
+  color: var(--electric);
+  border-width: 2px;
+}
+.brand-lockup .plus::before, .brand-lockup .plus::after { background: var(--electric); }
+.brand-lockup strong { color: var(--electric); font-weight: 900; }
+
+.chrome-nav {
+  display: flex; gap: 28px;
+  font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .14em;
+}
+.chrome-nav a { opacity: .75; transition: opacity .2s var(--ease); }
+.chrome-nav a:hover { opacity: 1; color: var(--electric); }
+
+.chrome-cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--electric); color: var(--print);
+  padding: 12px 22px 12px 22px;
+  border-radius: var(--radius);
+  font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .14em;
+  font-weight: 500;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.chrome-cta:hover { background: var(--royal); transform: translateX(2px); }
+.chrome-cta__arrow {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--print); color: var(--electric);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px; line-height: 1;
+}
+@media (max-width: 900px) { .chrome-nav { display: none; } }
+
+/* ============================================================
+   SECTION 1 — HERO
+   Full-bleed royal blue to echo the report cover. Powder-blue
+   condensed display title with the + glyph integrated. Ghosted
+   oversize + bleeding off the right edge. Hand-drawn lasso
+   around the "+" in the title.
+   ============================================================ */
+.hero {
+  background: var(--royal);
+  color: var(--print);
+  padding: 100px 24px 120px;
+  position: relative;
+  overflow: hidden;
+}
+/* Ghosted oversize + mark bleeding off the right edge */
+.hero__mark {
+  position: absolute;
+  right: -8%; top: 50%;
+  transform: translateY(-50%);
+  width: 680px; height: 680px;
+  color: var(--print);
+  opacity: .06;
+  pointer-events: none;
+}
+.hero__mark .plus {
+  width: 100%; height: 100%;
+  border-width: 4px;
+}
+.hero__mark .plus::before, .hero__mark .plus::after {
+  background: currentColor; height: 4px;
+}
+.hero__mark .plus::before { height: 4px; }
+.hero__mark .plus::after { width: 4px; }
+/* Subtle paper texture */
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(250,247,245,.015) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.hero__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  position: relative; z-index: 2;
+}
+.hero__eyebrow {
+  color: var(--powder);
+  display: inline-flex; align-items: center; gap: 14px;
+  margin-bottom: 48px;
+}
+.hero__eyebrow span { opacity: .85; }
+.hero__headline {
+  font-family: var(--brand); font-weight: 900;
+  color: var(--powder);
+  font-size: clamp(64px, 11vw, 168px);
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.hero__logo {
+  display: block;
+  width: clamp(182px, 31.5vw, 434px);
+  height: auto;
+  aspect-ratio: 360 / 54;
+  margin-bottom: 25px;
+}
+.hero__headline .plus-in-title {
+  display: inline-flex;
+  width: .85em; height: .85em;
+  vertical-align: -0.02em;
+  color: var(--powder);
+  border-width: 3px;
+  margin: 0 .04em;
+  position: relative;
+}
+.hero__headline .plus-in-title::before { height: 3px; }
+.hero__headline .plus-in-title::after { width: 3px; }
+.hero__sub {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.1vw, 28px);
+  line-height: 1.4;
+  max-width: 780px;
+  margin-top: 44px;
+  color: var(--print);
+  opacity: .95;
+}
+.hero__sub em {
+  font-style: italic;
+  color: var(--powder);
+}
+.hero__meta-strip {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(184,220,240,.25);
+  display: flex; flex-wrap: wrap; gap: 48px;
+  color: var(--powder);
+}
+.hero__meta-strip span strong {
+  display: block;
+  font-family: var(--brand); font-weight: 900;
+  font-size: 28px;
+  color: var(--print);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   SECTION 2 — LEAD CTA (cream)
+   Two-column: copy + CTAs on left, report cover card on right.
+   Cover card restyled to match the actual report cover.
+   ============================================================ */
+.lead {
+  background: var(--print);
+  padding: 140px 24px 120px;
+  position: relative;
+}
+.lead__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.lead__eyebrow {
+  color: var(--electric);
+  margin-bottom: 20px;
+}
+.lead h2 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  color: var(--ink);
+  font-size: clamp(42px, 5.2vw, 72px);
+  line-height: 0.96;
+  letter-spacing: 0;
+  margin-bottom: 28px;
+}
+.lead h2 em { font-style: normal; color: var(--electric); }
+.lead p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 52ch;
+}
+.lead p + p { margin-top: 18px; }
+.lead__bold {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-top: 28px;
+  max-width: 46ch;
+}
+.lead__bold em { font-style: italic; color: var(--electric); font-weight: 700; }
+.lead__ctas {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  margin-top: 36px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .14em;
+  padding: 16px 24px 16px 28px;
+  border-radius: var(--radius);
+  transition: background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+  cursor: pointer;
+}
+.btn__arrow {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 15px; line-height: 1;
+  transition: transform .25s var(--ease);
+}
+.btn:hover .btn__arrow { transform: translateX(3px); }
+.btn--primary { background: var(--electric); color: var(--print); }
+.btn--primary .btn__arrow { background: var(--print); color: var(--electric); }
+.btn--primary:hover { background: var(--royal); }
+.btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.btn--ghost .btn__arrow { background: var(--ink); color: var(--print); }
+.btn--ghost:hover { background: var(--ink); color: var(--print); }
+.btn--ghost:hover .btn__arrow { background: var(--print); color: var(--ink); }
+.btn--light { background: var(--print); color: var(--royal); }
+.btn--light .btn__arrow { background: var(--royal); color: var(--print); }
+.btn--light:hover { background: var(--powder); }
+.btn--yellow { background: var(--lightning); color: var(--ink); }
+.btn--yellow .btn__arrow { background: var(--ink); color: var(--lightning); }
+.btn--yellow:hover { background: var(--ink); color: var(--lightning); }
+.btn--yellow:hover .btn__arrow { background: var(--lightning); color: var(--ink); }
+
+/* Cover mockup — renders the actual physical report cover image
+   (landscape booklet, exported to SVG with embedded raster). */
+.cover {
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+  display: block;
+  box-shadow: 0 30px 60px -20px rgba(32,32,192,.35), 0 10px 20px -10px rgba(16,24,32,.3);
+  transform: rotate(-1.5deg);
+}
+.cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2046 / 1420;
+}
+@media (max-width: 900px) {
+  .lead__inner { grid-template-columns: 1fr; gap: 48px; }
+  .cover { transform: none; max-width: 460px; }
+}
+
+/* ============================================================
+   SECTION 3 — OPENING QUESTION (powder blue)
+   Replaces the old "marquee stats" section. Leads with the
+   inaugural question from the report. Three stat cards below
+   styled in the report's pattern.
+   ============================================================ */
+.question {
+  background: var(--powder);
+  color: var(--ink);
+  padding: 140px 24px;
+  position: relative;
+}
+.question__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.question__eyebrow {
+  color: var(--electric);
+  margin-bottom: 28px;
+}
+.question__head {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  color: var(--electric);
+  font-size: clamp(46px, 6.2vw, 90px);
+  line-height: 0.95;
+  letter-spacing: -0.005em;
+  max-width: 22ch;
+  margin-bottom: 24px;
+}
+.question__rest {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 56ch;
+  margin-bottom: 72px;
+}
+.question__rest em { font-style: italic; color: var(--electric); font-weight: 700; }
+.question__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.statcard {
+  background: var(--print);
+  padding: 40px 32px 32px;
+  position: relative;
+  border-top: 4px solid var(--electric);
+}
+.statcard__num {
+  font-family: var(--brand); font-weight: 900;
+  font-size: clamp(72px, 9vw, 120px);
+  line-height: .88;
+  letter-spacing: -0.03em;
+  color: var(--electric);
+  margin-bottom: 18px;
+}
+.statcard__label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--royal);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.statcard__body {
+  font-family: var(--serif); font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 32ch;
+}
+.bigstat {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+  background: var(--print);
+  padding: clamp(40px, 5vw, 64px);
+  border-top: 4px solid var(--electric);
+  box-shadow: 0 20px 40px -20px rgba(16,24,32,.18), 0 4px 12px -4px rgba(16,24,32,.08);
+}
+.bigstat__left { max-width: 44ch; }
+.bigstat__lede {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0 0 36px;
+}
+.bigstat__lede em { color: var(--electric); font-weight: 700; font-style: normal; }
+.bigstat__claim {
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 32px;
+  font-style: italic;
+  border-bottom: 1px solid rgba(16,24,32,.4);
+  padding-bottom: 24px;
+}
+.bigstat__claim em {
+  color: var(--electric);
+  font-style: italic;
+  font-weight: 700;
+}
+.bigstat__tag {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+/* Noncompliance list — mirrors report p.5 with vertical bracket.
+   Compact sizing: numbers are display-scale but not dominant over
+   the editorial column on the left. */
+.noncomp-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 4px 20px;
+  border-left: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.4vw, 18px);
+}
+.noncomp-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.noncomp-row__num {
+  font-family: var(--brand); font-weight: 900;
+  color: var(--electric);
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: .88;
+  letter-spacing: -0.02em;
+  min-width: 2.4ch;
+}
+.noncomp-row__pct {
+  font-size: 0.5em;
+  margin-left: 0.04em;
+}
+.noncomp-row__label {
+  font-family: var(--mono);
+  font-size: clamp(10px, .82vw, 11.5px);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 900px) {
+  .question__grid { grid-template-columns: 1fr; }
+  .bigstat {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .noncomp-row__num { font-size: 36px; }
+}
+
+/* ============================================================
+   SECTION 4 — CENTRAL FINDING (cream)
+   The Influence Gap chart — restyled in the report's palette.
+   Dumbbell stays structurally but colors move to electric blue
+   (filled) and royal blue (connectors).
+   ============================================================ */
+.finding {
+  background: var(--print);
+  padding: 140px 24px;
+}
+.finding__inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 80px;
+  align-items: center;
+}
+.finding__eyebrow {
+  color: var(--electric);
+  margin-bottom: 22px;
+}
+.finding__question {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.1vw, 30px);
+  line-height: 1.25;
+  color: var(--ink);
+  max-width: 26ch;
+  margin: 0 0 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(16,24,32,.25);
+}
+.finding__question em {
+  font-style: italic;
+  color: var(--electric);
+  font-weight: 700;
+}
+.finding h2 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  color: var(--ink);
+  font-size: clamp(48px, 5.8vw, 80px);
+  line-height: 0.94;
+  letter-spacing: -0.005em;
+  margin-bottom: 24px;
+}
+.finding h2 em { font-style: normal; color: var(--electric); }
+.finding__rest {
+  font-family: var(--serif); font-style: italic;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 48ch;
+  margin-bottom: 28px;
+}
+.finding__rest em { font-style: italic; color: var(--electric); font-weight: 700; }
+.finding p { font-size: 17px; line-height: 1.6; color: var(--ink); max-width: 52ch; }
+.finding p + p { margin-top: 14px; }
+.pullquote {
+  margin-top: 36px;
+  padding: 24px 28px;
+  border-left: 4px solid var(--electric);
+  background: var(--powder-lo);
+  font-family: var(--serif); font-style: italic;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.pullquote em { font-style: italic; color: var(--electric); font-weight: 700; }
+.pullquote__attr {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--mono); font-style: normal;
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--royal);
+  font-weight: 500;
+}
+
+/* Dumbbell chart — matched to report p.13 lollipop aesthetic.
+   Clean baseline, vertical ink bracket, mono labels, big Queering
+   delta numerals in electric (for +) or royal (for -). */
+.gap-chart { position: relative; padding-top: 4px; }
+.gap-chart__title {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 10px;
+  font-weight: 500;
+  max-width: 28ch;
+  line-height: 1.45;
+}
+.gap-chart__sub {
+  font-family: var(--serif); font-style: italic; font-size: 16px;
+  color: var(--ink); opacity: .85; margin-bottom: 26px;
+  max-width: 44ch;
+}
+.gap-chart__key {
+  display: flex; gap: 22px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink); font-weight: 500;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(16,24,32,.15);
+}
+.gap-chart__key span { display: inline-flex; align-items: center; gap: 8px; }
+.gap-chart__key .open::before {
+  content: ""; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--powder); box-sizing: border-box;
+  border: 2px solid var(--royal);
+}
+.gap-chart__key .filled::before {
+  content: ""; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--electric);
+}
+.gap-chart__divider {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--royal); font-weight: 500;
+  margin: 22px 0 14px;
+}
+.gap-chart__divider:first-of-type { margin-top: 6px; }
+.gap-chart__group {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+  gap: 14px;
+  border-left: 2px solid var(--ink);
+}
+.gap-row {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding-left: 20px;
+}
+.gap-row__label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: right;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+.gap-row__label small { display: block; font-size: 9px; opacity: .6; letter-spacing: .16em; margin-top: 3px; font-weight: 400; }
+.gap-row__bar {
+  position: relative;
+  height: 28px;
+}
+.gap-row__track {
+  position: absolute; top: 50%; left: 0; right: 0;
+  height: 1px;
+  background: rgba(16,24,32,.1);
+  transform: translateY(-50%);
+}
+.gap-row__connector {
+  position: absolute; top: 50%;
+  height: 2.5px;
+  transform: translateY(-50%);
+  background: var(--electric);
+}
+.gap-row--neg .gap-row__connector { background: var(--lightning); }
+.gap-row__tick {
+  position: absolute; top: 50%;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+}
+.gap-row__tick--open {
+  background: var(--powder);
+  border: 2.5px solid var(--royal);
+}
+.gap-row__tick--filled {
+  background: var(--electric);
+  border: 2.5px solid var(--electric);
+}
+.gap-row--neg .gap-row__tick--filled {
+  background: var(--lightning);
+  border-color: var(--lightning);
+}
+.gap-row__pct {
+  position: absolute; top: -14px;
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .08em;
+  color: var(--ink); opacity: .7;
+  transform: translateX(-50%);
+  font-weight: 500;
+}
+.gap-row__delta {
+  font-family: var(--brand); font-weight: 900;
+  color: var(--electric);
+  font-size: clamp(26px, 2.6vw, 36px);
+  line-height: .9;
+  letter-spacing: -0.02em;
+  justify-self: start;
+}
+.gap-row__delta small { font-size: 0.38em; font-family: var(--mono); letter-spacing: .14em; margin-left: 2px; font-weight: 500; vertical-align: 0.6em; }
+.gap-row--neg .gap-row__delta { color: var(--royal); }
+.gap-chart__more {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(16,24,32,.15);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink);
+  opacity: .7;
+  max-width: 46ch;
+}
+.gap-chart__more em {
+  font-style: italic;
+  color: var(--electric);
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .finding__inner { grid-template-columns: 1fr; }
+  .gap-row { grid-template-columns: 110px 1fr auto; gap: 12px; padding-left: 12px; }
+  .gap-row__label { font-size: 10px; margin-left: -12px; }
+  .gap-row__delta { font-size: 24px; }
+  .gap-row__pct { font-size: 9px; }
+}
+
+/* ============================================================
+   SECTION 5 — SIX STRATEGIC TAKEAWAYS (royal blue)
+   Swapped from ink black to royal blue to echo the report's
+   chapter openers. Numerals in powder blue. Scribble underline
+   under the section head.
+   ============================================================ */
+.takeaways {
+  background: var(--royal);
+  color: var(--print);
+  padding: 140px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.takeaways::before {
+  content: "+";
+  position: absolute;
+  right: -4%; top: 6%;
+  font-family: var(--brand); font-weight: 900;
+  font-size: 520px;
+  color: var(--powder);
+  opacity: .05;
+  line-height: 1;
+  pointer-events: none;
+}
+.takeaways__inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+.takeaways__head {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
+  margin-bottom: 72px;
+}
+.takeaways__eyebrow {
+  color: var(--powder);
+  margin-bottom: 18px;
+}
+.takeaways h2 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(46px, 5.4vw, 72px);
+  line-height: .95;
+  letter-spacing: 0;
+  color: var(--print);
+}
+.takeaways h2 em { color: var(--powder); font-style: normal; }
+.takeaways__kicker {
+  font-family: var(--serif); font-style: italic;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--powder);
+  max-width: 42ch;
+  justify-self: end;
+}
+.takeaways__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(184,220,240,.22);
+  border-left: 1px solid rgba(184,220,240,.22);
+}
+.takeaway {
+  padding: 36px 28px 40px;
+  border-right: 1px solid rgba(184,220,240,.22);
+  border-bottom: 1px solid rgba(184,220,240,.22);
+  position: relative;
+}
+.takeaway__num {
+  font-family: var(--brand); font-weight: 900;
+  font-size: 64px; line-height: 1;
+  color: var(--powder);
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+.takeaway__title {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  color: var(--print);
+  margin-bottom: 16px;
+  min-height: 58px;
+}
+.takeaway__body {
+  font-family: var(--serif);
+  font-size: 15px; line-height: 1.55;
+  color: var(--print); opacity: .88;
+  font-style: italic;
+}
+.takeaway__body em { font-style: italic; color: var(--powder); font-weight: 700; }
+@media (max-width: 1000px) {
+  .takeaways__head { grid-template-columns: 1fr; }
+  .takeaways__kicker { justify-self: start; }
+  .takeaways__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .takeaways__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SECTION 6 — EXPERIMENT CARD (powder blue)
+   Adopts the report's p.14 "What Moves a Patient to Yes?"
+   experiment pattern. Vertical "FINDING" label, full-width
+   royal-blue bar with powder-blue chips on key numbers.
+   ============================================================ */
+.experiment {
+  background: var(--powder);
+  padding: 140px 24px;
+}
+.experiment__inner {
+  max-width: var(--max); margin: 0 auto;
+}
+.experiment__head {
+  margin-bottom: 72px;
+  max-width: 68ch;
+}
+.experiment h2 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  color: var(--electric);
+  font-size: clamp(50px, 6.4vw, 96px);
+  line-height: .92;
+  letter-spacing: -0.005em;
+  margin-bottom: 20px;
+}
+.experiment__kicker {
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.3vw, 34px);
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 44ch;
+  margin: 0;
+}
+.experiment__kicker em { font-style: italic; color: var(--electric); font-weight: 700; }
+
+/* Lollipop chart — matches report p.13 */
+.lollipop {
+  margin-top: 24px;
+}
+.lollipop__title {
+  color: var(--ink);
+  margin-bottom: 28px;
+  max-width: 44ch;
+  font-weight: 500;
+}
+.lollipop__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 2px solid var(--ink);
+}
+.lolli {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding-left: 20px;
+}
+.lolli__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: right;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+.lolli__label small {
+  font-weight: 400;
+  opacity: .75;
+  display: inline;
+}
+.lolli__bar {
+  position: relative;
+  height: 22px;
+  width: calc(var(--pct) * 1.4%);
+  min-width: 4%;
+}
+.lolli__line {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 12px);
+  height: 2px;
+  background: var(--electric);
+}
+.lolli__dot {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-2px, -50%);
+  width: 14px;
+  height: 14px;
+  border: 2.5px solid var(--royal);
+  border-radius: 50%;
+  background: var(--powder);
+  box-sizing: border-box;
+}
+.lolli__num {
+  font-family: var(--brand); font-weight: 900;
+  color: var(--electric);
+  font-size: clamp(30px, 3.2vw, 44px);
+  line-height: .9;
+  letter-spacing: -0.02em;
+  justify-self: start;
+}
+.lolli__pct { font-size: 0.6em; margin-left: 0.05em; }
+.lollipop__more {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(16,24,32,.15);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink);
+  opacity: .7;
+  max-width: 46ch;
+}
+.lollipop__more em {
+  font-style: italic;
+  color: var(--electric);
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .lolli { grid-template-columns: 120px 1fr auto; gap: 10px; padding-left: 12px; }
+  .lolli__label { font-size: 10px; margin-left: -12px; }
+  .lolli__num { font-size: 28px; }
+}
+
+/* ============================================================
+   SECTION 7 — MID-PAGE CTA (electric blue band)
+   ============================================================ */
+.midcta {
+  background: var(--electric);
+  color: var(--print);
+  padding: 80px 24px;
+}
+.midcta__inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px;
+  align-items: center;
+}
+.midcta__eyebrow {
+  color: var(--powder);
+  margin-bottom: 14px;
+}
+.midcta h3 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: .98;
+  letter-spacing: -0.015em;
+}
+.midcta__sub {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; line-height: 1.5;
+  margin-top: 16px;
+  max-width: 50ch;
+  color: var(--powder);
+}
+.midcta__sub em { font-style: italic; color: var(--print); font-weight: 700; }
+.midcta .btn--light { justify-self: end; }
+@media (max-width: 900px) {
+  .midcta__inner { grid-template-columns: 1fr; }
+  .midcta .btn--light { justify-self: start; }
+}
+
+/* ============================================================
+   SECTION 8 — MEET THE EXPERTS (cream)
+   ============================================================ */
+.experts {
+  background: var(--print);
+  padding: 130px 24px;
+}
+.experts__inner { max-width: var(--max); margin: 0 auto; }
+.experts__head {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
+  margin-bottom: 64px;
+}
+.experts__eyebrow {
+  color: var(--electric);
+  margin-bottom: 14px;
+}
+.experts h2 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  color: var(--ink);
+  font-size: clamp(48px, 5.4vw, 76px);
+  line-height: .95;
+  letter-spacing: 0;
+}
+.experts h2 em { font-style: normal; color: var(--electric); }
+.experts__kicker {
+  font-family: var(--serif); font-style: italic;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink); opacity: .85;
+  max-width: 44ch;
+  justify-self: end;
+}
+.experts__kicker em { font-style: italic; color: var(--electric); font-weight: 700; }
+.experts__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.expert {
+  background: var(--print);
+}
+.expert__photo {
+  aspect-ratio: 4 / 5;
+  background: var(--royal);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+.expert__photo-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+  z-index: 2;
+}
+.expert__photo::before {
+  content: "+";
+  position: absolute;
+  right: -12%; top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--brand); font-weight: 900;
+  font-size: 360px;
+  color: rgba(184,220,240,.1);
+  line-height: 1;
+  pointer-events: none;
+}
+.expert__photo::after {
+  content: attr(data-initials);
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--brand); font-weight: 900;
+  font-size: clamp(64px, 8vw, 110px);
+  color: var(--powder);
+  opacity: .85;
+  letter-spacing: -0.02em;
+}
+.expert__name {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.expert__title {
+  font-family: var(--serif); font-style: italic;
+  font-size: 16px; color: var(--ink); opacity: .85;
+  line-height: 1.35;
+  max-width: 32ch;
+}
+@media (max-width: 900px) {
+  .experts__head { grid-template-columns: 1fr; }
+  .experts__kicker { justify-self: start; }
+  .experts__grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+}
+
+/* ============================================================
+   SECTION 9 — BRIEFING BOOKING (royal blue)
+   ============================================================ */
+.readout {
+  background: var(--royal);
+  color: var(--print);
+  padding: 140px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.readout::before {
+  content: "+";
+  position: absolute;
+  left: -6%; bottom: -12%;
+  font-family: var(--brand); font-weight: 900;
+  font-size: 560px;
+  color: var(--powder);
+  opacity: .05;
+  line-height: 1;
+  pointer-events: none;
+}
+.readout__inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: start;
+  position: relative; z-index: 1;
+}
+.readout__eyebrow {
+  color: var(--powder);
+  margin-bottom: 18px;
+}
+.readout h2 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(52px, 6.2vw, 90px);
+  line-height: .92;
+  letter-spacing: -0.005em;
+  color: var(--print);
+  margin-bottom: 24px;
+}
+.readout__lede {
+  font-family: var(--serif); font-style: italic;
+  font-size: 22px; line-height: 1.4;
+  color: var(--powder);
+  max-width: 42ch;
+  margin-bottom: 32px;
+}
+.readout__lede em { font-style: italic; color: var(--print); font-weight: 700; }
+.readout__list {
+  list-style: none; padding: 0; margin: 24px 0 0;
+  border-top: 1px solid rgba(184,220,240,.22);
+  counter-reset: readout;
+}
+.readout__list li {
+  padding: 16px 0 16px 44px;
+  border-bottom: 1px solid rgba(184,220,240,.22);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  color: var(--print);
+}
+.readout__list li::before {
+  content: counter(readout, decimal-leading-zero);
+  counter-increment: readout;
+  position: absolute; left: 0; top: 19px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+  color: var(--powder);
+  font-weight: 600;
+}
+.readout__form {
+  background: rgba(184,220,240,.08);
+  padding: 40px 36px;
+  border: 1px solid rgba(184,220,240,.22);
+}
+.readout__form h3 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  font-size: 24px; letter-spacing: -0.01em;
+  color: var(--print);
+  margin-bottom: 24px;
+}
+.field {
+  display: flex; flex-direction: column;
+  margin-bottom: 16px;
+}
+.field label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--powder);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.field input, .field select, .field textarea {
+  background: rgba(184,220,240,.08);
+  border: 1px solid rgba(184,220,240,.28);
+  color: var(--print);
+  padding: 12px 14px;
+  font-family: var(--sans); font-size: 15px;
+  border-radius: 4px;
+  transition: border-color .2s var(--ease);
+}
+.field textarea { min-height: 80px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--powder);
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.readout__submit {
+  width: 100%; justify-content: space-between;
+  margin-top: 8px;
+}
+.readout__note {
+  margin-top: 14px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--powder); opacity: .8;
+  text-align: center;
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  .readout__inner { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 600px) {
+  .readout { padding: 72px 16px; }
+  .readout__inner { gap: 40px; }
+  .readout__form { padding: 28px 20px; }
+  .field-row { grid-template-columns: 1fr; }
+  .readout h2 { font-size: clamp(44px, 9vw, 70px); }
+  .readout__lede { font-size: 18px; }
+  .field input, .field select, .field textarea { max-width: 100%; box-sizing: border-box; width: 100%; }
+}
+
+/* ============================================================
+   SECTION 10 — ABOUT + METHODOLOGY (powder blue)
+   ============================================================ */
+.about {
+  background: var(--powder);
+  color: var(--ink);
+  padding: 110px 24px;
+}
+.about__inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px;
+  align-items: start;
+}
+.about__eyebrow {
+  color: var(--electric);
+  margin-bottom: 16px;
+}
+.about h2 {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  color: var(--ink);
+  font-size: clamp(40px, 4.4vw, 58px);
+  line-height: .98;
+  letter-spacing: 0;
+  margin-bottom: 24px;
+}
+.about h2 em { font-style: normal; color: var(--electric); }
+.about p { font-size: 16px; line-height: 1.6; color: var(--ink); max-width: 58ch; }
+.about p + p { margin-top: 14px; }
+.about__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 22px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--electric);
+  border-bottom: 1px solid var(--electric);
+  padding-bottom: 2px;
+  font-weight: 500;
+}
+.method {
+  background: var(--print);
+  padding: 32px;
+  border: 1.5px solid var(--electric);
+}
+.method__label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--electric);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.method__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px;
+  margin-bottom: 24px;
+}
+.method__cell .k {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--royal);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.method__cell .v {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  font-size: 22px; letter-spacing: -0.01em;
+  color: var(--electric);
+}
+.method p {
+  font-family: var(--serif); font-style: italic;
+  font-size: 14px; line-height: 1.5;
+  color: var(--ink);
+  max-width: none;
+}
+@media (max-width: 900px) { .about__inner { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   SECTION 11 — CLOSER (cream)
+   Italic serif thesis with lasso circle and scribble underline.
+   The report's conclusion line from page 15.
+   ============================================================ */
+.closer {
+  background: var(--print);
+  padding: 140px 24px;
+}
+.closer__inner {
+  max-width: 980px; margin: 0 auto;
+  display: flex; align-items: flex-end; gap: 60px;
+  flex-wrap: wrap; justify-content: space-between;
+}
+.closer__quote {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.3;
+  color: var(--ink);
+  max-width: 720px;
+}
+.closer__quote em { font-style: italic; color: var(--electric); font-weight: 700; }
+
+/* ============================================================
+   CHROME FOOTER — ink black with royal accents
+   Vertical "SachsMEDIA" wordmark on right edge echoes the
+   report back cover.
+   ============================================================ */
+.chrome-footer {
+  background: var(--ink);
+  color: var(--print);
+  padding: 80px 24px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.chrome-footer__bleed {
+  position: absolute;
+  right: -2%; top: 0; bottom: 0;
+  display: flex; align-items: center;
+  font-family: var(--brand); font-weight: 900;
+  font-size: clamp(120px, 18vw, 280px);
+  color: var(--royal);
+  opacity: .22;
+  letter-spacing: -0.03em;
+  line-height: .8;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  pointer-events: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.chrome-footer__inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(250,247,245,.15);
+  position: relative; z-index: 1;
+}
+.chrome-footer__logo {
+  font-family: var(--brand); font-weight: 900; text-transform: uppercase;
+  font-size: 44px; letter-spacing: -0.02em; line-height: 1;
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.chrome-footer__logo .plus {
+  width: 38px; height: 38px;
+  color: var(--electric);
+  border-width: 2.5px;
+}
+.chrome-footer__logo .plus::before, .chrome-footer__logo .plus::after { background: var(--electric); }
+.chrome-footer__logo span { color: var(--electric); }
+.chrome-footer__addr {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  opacity: .7;
+  margin-top: 18px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+.chrome-footer h4 {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--powder);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.chrome-footer ul { list-style: none; padding: 0; }
+.chrome-footer ul li { padding: 6px 0; font-size: 14px; opacity: .85; }
+.chrome-footer ul li a:hover { color: var(--powder); }
+.chrome-footer__meta {
+  max-width: var(--max); margin: 32px auto 0;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  opacity: .6;
+  position: relative; z-index: 1;
+  font-weight: 500;
+}
+@media (max-width: 900px) { .chrome-footer__inner { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   MOCKUP FLAG
+   ============================================================ */
+.mockup-flag {
+  position: fixed; bottom: 20px; right: 20px; z-index: 100;
+  background: var(--electric); color: var(--print);
+  padding: 10px 16px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px -10px rgba(46,46,230,.45);
+  font-weight: 500;
+}
+
+/* ============================================================
+   ITALIC FACE OVERRIDE — LAST IN CASCADE
+   Libre Caslon Condensed Italic (the theme's italic face) has
+   characterful lowercase letterforms — most noticeably a cursive,
+   hooked t and p — that read as "odd" to modern eyes. Swap in
+   Georgia Italic everywhere italic editorial voice is applied,
+   whether via <em> or via class-level font-style: italic.
+   Must load AFTER the class rules that set font-family: var(--serif)
+   so same-specificity cascade order makes this override win.
+   h2 em is an exception: display headlines keep their Queering face.
+   NOTE [DEV]: Landing-page-only override. Do not propagate to
+   theme-level CSS.
+   ============================================================ */
+em,
+.question__rest,
+.bigstat__claim,
+.statcard__body,
+.finding__rest,
+.pullquote,
+.gap-chart__sub,
+.gap-chart__more,
+.lollipop__more,
+.takeaways__kicker,
+.midcta__sub,
+.experts__kicker,
+.expert__title,
+.readout__lede,
+.method p,
+.closer__quote { font-family: Georgia, 'Times New Roman', serif; }
+h2 em { font-family: inherit; }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     CHROME HEADER
+     =========================================================
+     TODO [DEV]: All href="#" placeholders in the header, footer,
+     and CTA buttons need real URLs. See WORDPRESS-BUILD-NOTES.md
+     § "Placeholder URL Inventory" for the full list and targets.
+     ========================================================= -->
+<header class="chrome-header">
+  <div class="chrome-header__inner">
+    <a class="brand-lockup" href="#" aria-label="SachsHEALTH">
+      <span class="plus" aria-hidden="true"></span>
+    </a>
+    <nav class="chrome-nav">
+      <a href="#">About</a>
+      <a href="#">Expertise</a>
+      <a href="#">News &amp; Insights</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================================
+     SECTION 1 — HERO (royal blue, matches report cover)
+     ========================================================= -->
+<section class="hero">
+  <div class="hero__mark" aria-hidden="true"><span class="plus"></span></div>
+  <div class="hero__inner">
+    <h1 class="hero__headline">
+      <img class="hero__logo" src="assets/sachshealth-logo-white.svg" alt="SachsHEALTH" width="360" height="54" fetchpriority="high" decoding="async" />
+      Influence<br>
+      Index
+    </h1>
+    <p class="hero__sub">
+      What if the people Americans <em>trust most</em> in health care are the ones they <em>hear from least?</em>
+    </p>
+    <p class="hero__sub">
+      The inaugural SachsHEALTH Influence Index <em>measures that disconnect</em>, identifies <em>where trust barriers exist</em>, and shows how communicators can address them.
+    </p>
+    <div class="hero__meta-strip">
+      <span class="mono-eyebrow"><strong>Volume 1</strong> Inaugural Report</span>
+      <span class="mono-eyebrow"><strong>2,500</strong> U.S. Adults</span>
+      <span class="mono-eyebrow"><strong>&plusmn;2.0 pts</strong> Margin</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 2 — LEAD CTA / INTRO (cream)
+     ========================================================= -->
+<section class="lead">
+  <div class="lead__inner">
+    <div>
+      <h2>A Trust <em>Rearrangement,</em><br>Not a Trust Collapse.</h2>
+      <p>
+        Just 52% of Americans trust the U.S. health care system to act in patients'
+        best interests. But trust has not evaporated evenly. It has moved. Americans
+        still trust their own doctor, nurse, pharmacist, and hospital. Local and state
+        health departments outperform Washington.
+      </p>
+      <p>
+        And yet the voices Americans trust most are largely absent from the public
+        conversation, while the ones they trust least are setting the terms.
+      </p>
+      <p class="lead__bold">
+        This is the <em>Influence Gap</em>: the defining tension in health care communication
+        today, and the frame you can use to close it.
+      </p>
+      <div class="lead__ctas">
+        <a class="btn btn--primary" href="#download">
+          Download the Report
+          <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="btn btn--ghost" href="#briefing">
+          Book an Executive Briefing
+          <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+    <figure class="cover" aria-hidden="true">
+      <img src="assets/cover-health-power-influence.svg" alt="Health, Power, Influence — the inaugural SachsHEALTH Influence Index report cover" width="2046" height="1420" loading="lazy" decoding="async" />
+    </figure>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 3 — OPENING QUESTION (powder blue)
+     ========================================================= -->
+<section class="question">
+  <div class="question__inner">
+    <h2 class="question__head">
+      What if the people Americans trust most in health care are the ones they hear from least?
+    </h2>
+    <p class="question__rest">
+      The Influence Index was built to answer that question with data. One figure sets the
+      terms for every finding that follows, and every conversation your organization
+      will have about <em>trust, messengers, and influence</em> in the year ahead.
+    </p>
+    <div class="bigstat">
+      <div class="bigstat__left">
+        <p class="bigstat__lede">
+          The disconnect between who Americans believe has influence over the
+          health care system and who they believe should have influence is not
+          abstract, but <em>tangibly changes behavior.</em>
+        </p>
+        <p class="bigstat__claim">
+          In the past year, <em>42% of Americans</em> deliberately acted against
+          their clinician's recommendations because of a lack of trust in the
+          health care system.
+        </p>
+        <p class="bigstat__tag">
+          This is active noncompliance, driven by a trust deficit that reaches
+          beyond the exam room.
+        </p>
+      </div>
+      <ul class="noncomp-list" aria-label="Behaviors driven by trust deficit in the past year">
+        <li class="noncomp-row">
+          <span class="noncomp-row__num">17<span class="noncomp-row__pct">%</span></span>
+          <span class="noncomp-row__label">Avoided or delayed a medical treatment</span>
+        </li>
+        <li class="noncomp-row">
+          <span class="noncomp-row__num">16<span class="noncomp-row__pct">%</span></span>
+          <span class="noncomp-row__label">Avoided or delayed a vaccine</span>
+        </li>
+        <li class="noncomp-row">
+          <span class="noncomp-row__num">15<span class="noncomp-row__pct">%</span></span>
+          <span class="noncomp-row__label">Skipped a medical test</span>
+        </li>
+        <li class="noncomp-row">
+          <span class="noncomp-row__num">12<span class="noncomp-row__pct">%</span></span>
+          <span class="noncomp-row__label">Changed a medication dose on their own</span>
+        </li>
+        <li class="noncomp-row">
+          <span class="noncomp-row__num">11<span class="noncomp-row__pct">%</span></span>
+          <span class="noncomp-row__label">Stopped taking a medication early</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 4 — CENTRAL FINDING: THE INFLUENCE GAP (cream)
+     ========================================================= -->
+<section class="finding">
+  <div class="finding__inner">
+    <div>
+      <p class="finding__question">Why do Americans trust their clinicians<br><em>yet act against their advice?</em></p>
+      <h2>Who has power<br>isn't who has <em>trust.</em></h2>
+      <p class="finding__rest">
+        No group has a wider gap between perceived influence and desired influence than <em>clinicians.</em>
+      </p>
+      <p>
+        Only 26% say doctors and nurses are among the most influential voices in health
+        care today, but 58% say they should be. Insurers show the reverse: 51% perceived
+        influence, but only 15% think they should have it. Americans want the people who
+        care for them to speak louder. They want the industries that set prices to speak less.
+      </p>
+      <div class="pullquote">
+        The gap between who Americans <em>trust</em> and who actually <em>shapes</em> their
+        health care is the defining tension in the system today.
+        <span class="pullquote__attr">Ryan Cohn &middot; Partner &amp; Chief Strategy Officer, Sachs Media</span>
+      </div>
+    </div>
+    <div class="gap-chart">
+      <div class="gap-chart__title">The Influence Gap</div>
+      <div class="gap-chart__sub">Perceived influence today vs.&nbsp;desired influence, by group.</div>
+      <div class="gap-chart__key">
+        <span class="open">Has Today</span>
+        <span class="filled">Should Have</span>
+      </div>
+
+      <div class="gap-chart__divider">Americans Want MORE Influence</div>
+
+      <ul class="gap-chart__group">
+        <li class="gap-row">
+          <div class="gap-row__label">Clinicians<small>Doctors &middot; Nurses</small></div>
+          <div class="gap-row__bar">
+            <span class="gap-row__track"></span>
+            <span class="gap-row__connector" style="left:26%;width:32%"></span>
+            <span class="gap-row__tick gap-row__tick--open" style="left:26%"></span>
+            <span class="gap-row__tick gap-row__tick--filled" style="left:58%"></span>
+            <span class="gap-row__pct" style="left:26%">26%</span>
+            <span class="gap-row__pct" style="left:58%">58%</span>
+          </div>
+          <div class="gap-row__delta">+32<small>PT</small></div>
+        </li>
+
+        <li class="gap-row">
+          <div class="gap-row__label">Patient Advocacy<small>Nonprofits</small></div>
+          <div class="gap-row__bar">
+            <span class="gap-row__track"></span>
+            <span class="gap-row__connector" style="left:14%;width:27%"></span>
+            <span class="gap-row__tick gap-row__tick--open" style="left:14%"></span>
+            <span class="gap-row__tick gap-row__tick--filled" style="left:41%"></span>
+            <span class="gap-row__pct" style="left:14%">14%</span>
+            <span class="gap-row__pct" style="left:41%">41%</span>
+          </div>
+          <div class="gap-row__delta">+27<small>PT</small></div>
+        </li>
+
+        <li class="gap-row">
+          <div class="gap-row__label">Scientists<small>Researchers</small></div>
+          <div class="gap-row__bar">
+            <span class="gap-row__track"></span>
+            <span class="gap-row__connector" style="left:18%;width:22%"></span>
+            <span class="gap-row__tick gap-row__tick--open" style="left:18%"></span>
+            <span class="gap-row__tick gap-row__tick--filled" style="left:40%"></span>
+            <span class="gap-row__pct" style="left:18%">18%</span>
+            <span class="gap-row__pct" style="left:40%">40%</span>
+          </div>
+          <div class="gap-row__delta">+22<small>PT</small></div>
+        </li>
+
+        <li class="gap-row">
+          <div class="gap-row__label">Hospitals<small>Health Systems</small></div>
+          <div class="gap-row__bar">
+            <span class="gap-row__track"></span>
+            <span class="gap-row__connector" style="left:22%;width:11%"></span>
+            <span class="gap-row__tick gap-row__tick--open" style="left:22%"></span>
+            <span class="gap-row__tick gap-row__tick--filled" style="left:33%"></span>
+            <span class="gap-row__pct" style="left:22%">22%</span>
+            <span class="gap-row__pct" style="left:33%">33%</span>
+          </div>
+          <div class="gap-row__delta">+11<small>PT</small></div>
+        </li>
+      </ul>
+
+      <p class="gap-chart__more">See the <em>Influence Index</em> for the full picture, including the groups Americans want to speak less.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 6 — EXPERIMENT CARD (powder blue)
+     Adopts the report's p.14 pattern
+     ========================================================= -->
+<section class="experiment">
+  <div class="experiment__inner">
+    <div class="experiment__head">
+      <h2>Changing Minds<br>on <em class="scribble">Health Policy.</em></h2>
+      <p class="experiment__kicker">
+        Reaching the skeptical requires showing your work, and <em>the messenger matters.</em>
+      </p>
+    </div>
+
+    <div class="lollipop">
+      <div class="lollipop__title mono-eyebrow">Sources Most Likely to Change Someone's Mind About a Health Policy Proposal</div>
+      <ul class="lollipop__list">
+        <li class="lolli" style="--pct:50;">
+          <span class="lolli__label">Personal Doctor<br><small>or Clinician</small></span>
+          <span class="lolli__bar" aria-hidden="true"><span class="lolli__line"></span><span class="lolli__dot"></span></span>
+          <span class="lolli__num">50<span class="lolli__pct">%</span></span>
+        </li>
+        <li class="lolli" style="--pct:32;">
+          <span class="lolli__label">Independent<br><small>Research Org</small></span>
+          <span class="lolli__bar" aria-hidden="true"><span class="lolli__line"></span><span class="lolli__dot"></span></span>
+          <span class="lolli__num">32<span class="lolli__pct">%</span></span>
+        </li>
+        <li class="lolli" style="--pct:22;">
+          <span class="lolli__label">Nurse or<br><small>Clinician</small></span>
+          <span class="lolli__bar" aria-hidden="true"><span class="lolli__line"></span><span class="lolli__dot"></span></span>
+          <span class="lolli__num">22<span class="lolli__pct">%</span></span>
+        </li>
+        <li class="lolli" style="--pct:21;">
+          <span class="lolli__label">Friend or<br><small>Family Member</small></span>
+          <span class="lolli__bar" aria-hidden="true"><span class="lolli__line"></span><span class="lolli__dot"></span></span>
+          <span class="lolli__num">21<span class="lolli__pct">%</span></span>
+        </li>
+      </ul>
+      <p class="lollipop__more">See the <em>Influence Index</em> for all 11 sources, including nonprofits, journalists, patient stories, and more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 7 — MID-PAGE CTA (electric band)
+     ========================================================= -->
+<section class="midcta">
+  <div class="midcta__inner">
+    <div>
+      <div class="midcta__eyebrow mono-eyebrow">Ready to go deeper?</div>
+      <h3>Want the full picture for your sector?</h3>
+      <p class="midcta__sub">
+        Ryan Cohn, Karen Cyphers, and Byron Johnson will walk your leadership team
+        through what these findings mean for your organization, <em>filtered for your sector and audience.</em>
+      </p>
+    </div>
+    <a class="btn btn--light" href="#briefing">
+      Book a Briefing
+      <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 8 — MEET THE EXPERTS (cream)
+     ========================================================= -->
+<section class="experts">
+  <div class="experts__inner">
+    <div class="experts__head">
+      <div>
+        <div class="experts__eyebrow mono-eyebrow">The Team</div>
+        <h2>Meet the <em>experts.</em></h2>
+      </div>
+      <p class="experts__kicker">
+        Briefings are led by the same strategists who designed the research
+        and advise health care leaders on <em>the communications implications</em> every day.
+      </p>
+    </div>
+    <div class="experts__grid">
+      <div class="expert">
+        <div class="expert__photo">
+          <img class="expert__photo-img" src="assets/ryan-cohn-800.webp" alt="Ryan Cohn" width="800" height="1000" loading="lazy" decoding="async" />
+        </div>
+        <div class="expert__name">Ryan Cohn</div>
+        <div class="expert__title">Partner &amp; Chief Strategy Officer, Sachs Media</div>
+      </div>
+      <div class="expert">
+        <div class="expert__photo">
+          <img class="expert__photo-img" src="assets/karen-cyphers-800.webp" alt="Karen Cyphers, Ph.D." width="800" height="1000" loading="lazy" decoding="async" />
+        </div>
+        <div class="expert__name">Karen Cyphers, Ph.D.</div>
+        <div class="expert__title">Chief Research Officer &amp; Partner, Sachs Media</div>
+      </div>
+      <div class="expert">
+        <div class="expert__photo">
+          <img class="expert__photo-img" src="assets/byron-johnson-800.webp" alt="Byron Johnson" width="768" height="960" loading="lazy" decoding="async" />
+        </div>
+        <div class="expert__name">Byron Johnson</div>
+        <div class="expert__title">Vice President, Health</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 9 — BRIEFING BOOKING (royal blue)
+     ========================================================= -->
+<section class="readout" id="briefing">
+  <div class="readout__inner">
+    <div>
+      <div class="readout__eyebrow mono-eyebrow">Executive Briefing</div>
+      <h2>What does this<br>mean for your<br>organization?</h2>
+      <p class="readout__lede">
+        National findings, <em>sector-specific implications.</em> SachsHEALTH offers
+        complimentary executive briefings tailored to your organization's
+        competitive position and communications priorities.
+      </p>
+      <ol class="readout__list">
+        <li>Key survey findings filtered for your sector and audience.</li>
+        <li>How the trust-power gap specifically affects your type of organization.</li>
+        <li>Concrete insights and next steps for communications and positioning.</li>
+        <li>Live Q&amp;A with our research and strategy leads.</li>
+        <li>Issue and controversy-specific findings on vaccine policy, environmental health, litigation environments, telehealth, and mental health.</li>
+      </ol>
+    </div>
+    <div class="readout__form">
+      <h3>Book Your Briefing</h3>
+      <!--
+        ============================================================
+        GRAVITY FORMS EMBED — Briefing Request
+        ============================================================
+        DEV INSTRUCTIONS:
+        1. Build Gravity Form with fields matching the static markup
+           below (Name, Title, Organization, Work Email, Sector select,
+           optional Message).
+        2. Sector dropdown options:
+             Health System / Hospital
+             Pharmaceutical / Life Sciences
+             Payer / Insurance
+             Digital Health / HealthTech
+             Public Health Agency
+             Trade Association
+             Patient Advocacy Nonprofit
+             Other
+        3. Submit button label: "Request Your Briefing"
+        4. Confirmation message (inline): "Thanks — we'll respond
+           within two business days to schedule."
+        5. Notification routing: see WORDPRESS-BUILD-NOTES.md.
+        6. In Elementor/Divi: drop a Shortcode widget inside this
+           container and paste: [gravityform id="X" title="false"
+           description="false" ajax="true"]
+        7. Remove the static <form> markup below after Gravity Forms
+           is wired up. Static markup is kept ONLY so the page renders
+           correctly during build and QA.
+        8. Apply theme CSS overrides per WORDPRESS-BUILD-NOTES.md so
+           Gravity Forms inherits .readout__form, .field, .field-row,
+           .btn.btn--light styles.
+        ============================================================
+      -->
+
+      <!-- TODO [DEV]: Replace this entire <form> block with Gravity Forms shortcode. -->
+      <form class="readout__form-static" onsubmit="event.preventDefault(); return false;">
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="f-title">Title</label>
+            <input id="f-title" name="title" type="text" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-org">Organization</label>
+          <input id="f-org" name="org" type="text" required />
+        </div>
+        <div class="field">
+          <label for="f-email">Work Email</label>
+          <input id="f-email" name="email" type="email" required />
+        </div>
+        <div class="field">
+          <label for="f-sector">Sector</label>
+          <select id="f-sector" name="sector">
+            <option>Health System / Hospital</option>
+            <option>Pharmaceutical / Life Sciences</option>
+            <option>Payer / Insurance</option>
+            <option>Digital Health / HealthTech</option>
+            <option>Public Health Agency</option>
+            <option>Trade Association</option>
+            <option>Patient Advocacy Nonprofit</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">Anything we should know (optional)</label>
+          <textarea id="f-message" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn--light readout__submit">
+          Request Your Briefing
+          <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+        </button>
+        <div class="readout__note">We'll respond within two business days to schedule.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 10 — ABOUT + METHODOLOGY (powder blue)
+     ========================================================= -->
+<section class="about" id="download">
+  <div class="about__inner">
+    <div>
+      <div class="about__eyebrow mono-eyebrow">About This Report</div>
+      <h2>Research-backed strategy<br>for a <em>fractured moment.</em></h2>
+      <p>
+        SachsHEALTH is Sachs Media's specialized division for health care and life
+        sciences, with a 30-year track record of partnering with health industry
+        leaders to drive change. We lead public affairs and strategic communications
+        campaigns that combine health policy insight, original research, disciplined
+        message development, and targeted stakeholder engagement.
+      </p>
+      <p>
+        The full 2026 SachsHEALTH Influence Index report is available as a free
+        download. Share it widely with your team.
+      </p>
+      <!-- TODO [DEV]: Point to final SachsHEALTH division landing page. -->
+      <a class="about__link" href="#">
+        Visit sachsmedia.com/sachs-health
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+        <!-- TODO [DEV]: Link to final gated or ungated PDF in WP Media Library. -->
+        <a class="btn btn--primary" href="#">
+          Download the Report (PDF)
+          <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+    <div class="method">
+      <div class="method__label">Methodology</div>
+      <div class="method__grid">
+        <div class="method__cell">
+          <div class="k">Sample Size</div>
+          <div class="v">N = 2,500</div>
+        </div>
+        <div class="method__cell">
+          <div class="k">Margin of Error</div>
+          <div class="v">&plusmn; 2.0 pts</div>
+        </div>
+        <div class="method__cell">
+          <div class="k">Scope</div>
+          <div class="v">National</div>
+        </div>
+      </div>
+      <p>
+        A national survey of 2,500 U.S. adults, fielded February 2026. The instrument
+        included both traditional opinion questions and controlled experiments that tested
+        messenger, framing, and policy authorization effects. Designed and analyzed by
+        Karen Cyphers, Ph.D., Chief Research Officer of Sachs Media's Breakthrough Research
+        division. Cross-tabulations by political ideology, age, race/ethnicity, gender,
+        household income, insurance status, and region. Margin of error approximately
+        &plusmn;2.0 percentage points at the 95% confidence level.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECTION 11 — CLOSER (cream)
+     ========================================================= -->
+<section class="closer">
+  <div class="closer__inner">
+    <p class="closer__quote">
+      The data gives you the question.<br>
+      A <em>briefing</em> gives you the answer.
+    </p>
+    <a class="btn btn--primary" href="#briefing">
+      Book a Briefing
+      <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- =========================================================
+     CHROME FOOTER
+     ========================================================= -->
+<footer class="chrome-footer">
+  <div class="chrome-footer__bleed" aria-hidden="true">SachsMEDIA</div>
+  <div class="chrome-footer__inner">
+    <div>
+      <div class="chrome-footer__logo">
+        <span class="plus" aria-hidden="true"></span>
+        <span style="color: var(--print);">Sachs</span><span>HEALTH</span>
+      </div>
+      <div class="chrome-footer__addr">
+        Tallahassee &middot; Florida<br>
+        850.222.1996<br>
+        sachsmedia.com
+      </div>
+    </div>
+    <div>
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">Public Affairs</a></li>
+        <li><a href="#">Research &amp; Message Development</a></li>
+        <li><a href="#">Digital Advocacy</a></li>
+        <li><a href="#">Reputation &amp; Public Engagement</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>SachsHEALTH</h4>
+      <ul>
+        <li><a href="#">Sachs Health Home</a></li>
+        <li><a href="#">News &amp; Insights</a></li>
+        <li><a href="#">Meet Our People</a></li>
+        <li><a href="#briefing">Book a Briefing</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="chrome-footer__meta">
+    <span>&copy; 2026 Sachs Media &middot; Breakthrough Research Division</span>
+    <span>Influence Index &nbsp;|&nbsp; Volume 1</span>
+  </div>
+</footer>
+
+
+<script>
+/* Minimal reveal-on-scroll for stat numbers and cards. No external deps. */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const els = document.querySelectorAll('.takeaway, .expert, .gap-row, .lolli, .noncomp-row, .bigstat__claim');
+  els.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.8s cubic-bezier(.2,.7,.3,1), transform 0.8s cubic-bezier(.2,.7,.3,1)';
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(el => io.observe(el));
+})();
+</script>
+
+</body>
+</html>
